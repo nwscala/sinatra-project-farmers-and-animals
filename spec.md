@@ -2,10 +2,10 @@
 
 Specs:
 - [x] Use Sinatra to build the app
-- [ ] Use ActiveRecord for storing information in a database
-- [ ] Include more than one model class (e.g. User, Post, Category)
-- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
-- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- [x] Use ActiveRecord for storing information in a database (db/migrate)
+- [x] Include more than one model class (e.g. User, Post, Category) (app/models Farmer, Animal, Farmer_Animal)
+- [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts) (Farmer has_many Farmer_Animals)
+- [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) (Farmer_Animals belongs_to Animal)
 - [ ] Include user accounts with unique login attribute (username or email)
 - [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
 - [ ] Ensure that users can't modify content created by other users
