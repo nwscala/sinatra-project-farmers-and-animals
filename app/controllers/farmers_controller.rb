@@ -33,7 +33,11 @@ class FarmersController < ApplicationController
 
   # GET: /farmers/login
   get "/farmers/login" do
-    erb :"/farmers/login"
+    if logged_in?
+      redirect "/farmers"
+    else
+      erb :"/farmers/login"
+    end
   end
 
   # POST: /farmers/login
@@ -55,7 +59,16 @@ class FarmersController < ApplicationController
 
   # GET: /farmers/5/edit
   get "/farmers/:slug/edit" do
-    erb :"/farmers/edit"
+    if logged_in?
+      @farmer = Farmer.find_by_slug(params[:slug])
+      if @farmer.id == session[:farmer_id]
+        erb :"/farmers/edit"
+      else
+        redirect "/farmers"
+      end
+    else
+      redirect "/farmers/login"
+    end
   end
 
   # PATCH: /farmers/5
@@ -64,7 +77,16 @@ class FarmersController < ApplicationController
   end
 
   # DELETE: /farmers/5/delete
-  delete "/farmers/:slug/delete" do
+  delete "/farmers/:slug" do
     redirect "/"
+  end
+
+  get "/farmers/logout" do
+    if logged_in?
+      session.clear
+      redirect "/"
+    else
+      redirect "/farmers"
+    end
   end
 end

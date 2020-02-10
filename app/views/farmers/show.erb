@@ -1,1 +1,15 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1><%= @farmer.username.capitalize %>'s Personal Page</h1>
+<h2>Kinds of Animals</h2>
+<ul>
+    <% @farmer.farmer_animals.each do |farmer_animal| %>
+        <li>
+            Kind of Animal:<a href="/animals/<%= farmer_animal.animal_id %>"><%= farmer_animal.animal.kind_of_animal %></a>
+            <br> 
+            Quantity of Animal: <%= farmer_animal.quantity %>
+        </li>
+        <br>
+    <% end %>
+</ul>
+<a href="/farmers/<%= @farmer.slug %>/edit">Edit Farmer</a>
+<br>
+<a href="/farmers/logout">Log Out</a>

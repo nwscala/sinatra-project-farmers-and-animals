@@ -1,1 +1,24 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Current Information of <%= @farmer.username %></h1>
+<h2>Kinds of Animals</h2>
+<ul>
+    <% @farmer.farmer_animals.each do |farmer_animal| %>
+        <li>
+            Kind of Animal:<a href="/animals/<%= farmer_animal.animal_id %>"><%= farmer_animal.animal.kind_of_animal %></a>
+            <br> 
+            Quantity of Animal: <%= farmer_animal.quantity %>
+        </li>
+        <br>
+    <% end %>
+</ul>
+<h2>What would you like to change?</h1>
+<h3>Kinds of Animals:</h3>
+<ul>
+    <form action="/farmers/<%= @farmer.slug %>" method="post">
+        <input type="hidden" id="hidden" name="_method" value="patch">
+        <% @farmer.farmer_animals.each do |farmer_animal|%>
+            <li>
+                <label for=""></label>
+            </li>
+        <% end %>
+    </form>
+</ul>
