@@ -9,8 +9,8 @@ class Farmer < ActiveRecord::Base
     end
     
     def self.find_by_slug(slug_to_find)
-        User.all.find do |user|
-          user.slug = slug_to_find
+        Farmer.all.find do |farmer|
+          farmer.slug == slug_to_find
         end
     end
 end

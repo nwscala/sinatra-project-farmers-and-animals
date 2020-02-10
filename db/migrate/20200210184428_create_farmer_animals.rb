@@ -3,6 +3,7 @@ class CreateFarmerAnimals < ActiveRecord::Migration
     create_table :farmer_animals do |t|
       t.integer :farmer_id
       t.integer :animal_id
+      t.integer :quantity
 
       t.timestamps null: false
     end

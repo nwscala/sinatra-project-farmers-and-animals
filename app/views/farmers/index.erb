@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @farmer.username %></h1>
+<ul>
+    <% @farmers.each do |farmer| %>
+        <li> <a href="/farmers/<%= farmer.slug %>"><%= farmer.username %></a> </li>
+        <br>
+    <% end %>
+</ul>

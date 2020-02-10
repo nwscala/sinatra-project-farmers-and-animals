@@ -2,12 +2,12 @@ class AnimalsController < ApplicationController
 
   # GET: /animals
   get "/animals" do
-    erb :"/animals/index.html"
+    erb :"/animals/index"
   end
 
   # GET: /animals/new
   get "/animals/new" do
-    erb :"/animals/new.html"
+    erb :"/animals/new"
   end
 
   # POST: /animals
@@ -17,12 +17,12 @@ class AnimalsController < ApplicationController
 
   # GET: /animals/5
   get "/animals/:id" do
-    erb :"/animals/show.html"
+    erb :"/animals/show"
   end
 
   # GET: /animals/5/edit
   get "/animals/:id/edit" do
-    erb :"/animals/edit.html"
+    erb :"/animals/edit"
   end
 
   # PATCH: /animals/5
