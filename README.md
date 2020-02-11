@@ -3,7 +3,7 @@
 description
 
 ## Installation
-
+fork, clone, rake db:migrate, run shotgun
 
 ## Usage
 

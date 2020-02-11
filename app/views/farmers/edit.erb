@@ -28,8 +28,13 @@
             <input type="text" name="new_animal[kind_of_animal]" id="new_animal[kind_of_animal]">
             <br>
             <label for="new_animal[quantity]">New Animal Quantity:</label>
-            <input type="text" name="new_animal[quantity]" id="new_animal[quantity]">
+            <input type="number" name="new_animal[quantity]" id="new_animal[quantity]">
         </li>
         <input type="submit" value="Submit">
     </form>
 </ul>
+<h2>Would you like to delete your account?</h2>
+<form action="/farmers/<%= @farmer.slug %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Account">
+</form>

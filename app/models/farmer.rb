@@ -1,6 +1,6 @@
 class Farmer < ActiveRecord::Base
     has_secure_password
-    has_many :farmer_animals
+    has_many :farmer_animals, dependent: :destroy
     has_many :animals, through: :farmer_animals
     validates :username, presence: true, uniqueness: true
 
