@@ -16,9 +16,20 @@
     <form action="/farmers/<%= @farmer.slug %>" method="post">
         <input type="hidden" id="hidden" name="_method" value="patch">
         <% @farmer.farmer_animals.each do |farmer_animal|%>
+            <input type="hidden" name="farmer_animals[][id]" value="<%= farmer_animal.id %>">
             <li>
-                <label for=""></label>
+                <label for="farmer_animals[][id]"><%= farmer_animal.animal.kind_of_animal%>:</label>
+                <input type="number" name="farmer_animals[][quantity]" id="farmer_animals[][id]" value="<%= farmer_animal.quantity %>">
             </li>
         <% end %>
+        <h3>Create or Add a New Animal:</h3>
+        <li>
+            <label for="new_animal[kind_of_animal]">New Animal Name:</label>
+            <input type="text" name="new_animal[kind_of_animal]" id="new_animal[kind_of_animal]">
+            <br>
+            <label for="new_animal[quantity]">New Animal Quantity:</label>
+            <input type="text" name="new_animal[quantity]" id="new_animal[quantity]">
+        </li>
+        <input type="submit" value="Submit">
     </form>
 </ul>

@@ -47,7 +47,7 @@ class FarmersController < ApplicationController
       session[:farmer_id] = @farmer.id
       redirect "/farmers"
     else
-      redirect "/login"
+      redirect "/farmers/login"
     end
   end
 
@@ -73,7 +73,21 @@ class FarmersController < ApplicationController
 
   # PATCH: /farmers/5
   patch "/farmers/:slug" do
-    redirect "/farmers/:slug"
+    # binding.pry
+    farmer_animals = params[:farmer_animals]
+    farmer_animals.each do |update_hash|
+      farmer_animal_update = FarmerAnimal.find_by(id: update_hash[:id])
+      farmer_animal_update.update(update_hash)
+    end
+    
+    new_animal_hash = params[:new_animal]
+    if new_animal_hash[:kind_of_animal].strip.empty? || new_animal_hash[:quantity].strip.empty?
+      redirect "/farmers/#{params[:slug]}/edit"
+    else
+      
+    end
+
+    redirect "/farmers/#{params[:slug]}"
   end
 
   # DELETE: /farmers/5/delete
