@@ -1,21 +1,12 @@
 # Farmers and Animals
-
-description
+This application allows users(farmers) to sign up or log in to their personal accounts and track the number and kind of animals they own. It also allows users to view individual animals and see which farmers own them.
 
 ## Installation
-fork, clone, rake db:migrate, run shotgun
-
-## Usage
-
-
-
-## Development
-
-
+Fork or clone this repository, run rake db:migrate in the console, run shotgun in the console, then navigate to localhost:9393 to start using the app.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nwscala/math_api_cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nwscala/sinatra-project-farmers-and-animals. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

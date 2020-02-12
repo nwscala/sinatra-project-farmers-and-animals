@@ -3,6 +3,7 @@ class FarmersController < ApplicationController
   # GET: /farmers
   get "/farmers" do
     if logged_in?
+      FarmerAnimal.cleanup
       @farmer = current_farmer
       @farmers = Farmer.all
       erb :"/farmers/index"
@@ -62,8 +63,12 @@ class FarmersController < ApplicationController
 
   # GET: /farmers/5
   get "/farmers/:slug" do
-    @farmer = Farmer.find_by_slug(params[:slug])
-    erb :"/farmers/show"
+    if logged_in?
+      @farmer = Farmer.find_by_slug(params[:slug])
+      erb :"/farmers/show"
+    else
+      redirect "/farmers/login"
+    end
   end
 
   # GET: /farmers/5/edit

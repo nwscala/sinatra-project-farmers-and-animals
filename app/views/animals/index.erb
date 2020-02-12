@@ -1,1 +1,7 @@
-<h1>This is the Model's index page.</h1>
+<h1>Animal Index</h1>
+<ul>
+    <% @animals.each do |animal| %>
+        <li> <a href="/animals/<%= animal.slug %>"><%= animal.kind_of_animal %></a> </li>
+        <br>
+    <% end %>
+</ul>
