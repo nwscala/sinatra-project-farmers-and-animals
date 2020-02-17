@@ -10,8 +10,10 @@
         <br>
     <% end %>
 </ul>
-<a href="/farmers/<%= @farmer.slug %>/edit">Edit Farmer</a>
-<br>
+<% if @farmer == current_farmer%>
+    <a href="/farmers/<%= @farmer.slug %>/edit">Edit Farmer</a>
+    <br>
+<% end %>
 <a href="/farmers/logout">Log Out</a>
 <br>
 <h3>Links</h3>

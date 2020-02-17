@@ -5,7 +5,7 @@ class AnimalsController < ApplicationController
     if logged_in?
       FarmerAnimal.cleanup
       Animal.cleanup
-      @animals = Animal.all
+      @animals = Animal.all.sort_by{|animal| animal.kind_of_animal}
       erb :"/animals/index"
     else
       redirect "/farmers/login"
