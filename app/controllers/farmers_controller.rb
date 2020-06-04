@@ -61,7 +61,7 @@ class FarmersController < ApplicationController
     end
   end
 
-  # GET: /farmers/5
+  # GET: /farmers/farmerbrown
   get "/farmers/:slug" do
     if logged_in?
       @farmer = Farmer.find_by_slug(params[:slug])
@@ -71,7 +71,7 @@ class FarmersController < ApplicationController
     end
   end
 
-  # GET: /farmers/5/edit
+  # GET: /farmers/farmerbrown/edit
   get "/farmers/:slug/edit" do
     if logged_in?
       @farmer = Farmer.find_by_slug(params[:slug])
@@ -85,7 +85,7 @@ class FarmersController < ApplicationController
     end
   end
 
-  # PATCH: /farmers/5
+  # PATCH: /farmers/farmerbrown
   patch "/farmers/:slug" do
     # binding.pry
     farmer_animals = params[:farmer_animals]
